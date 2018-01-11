@@ -15,16 +15,26 @@
 </head>
 <body>
   <div>
-    <canvas id="c1" width="600"  height="500">
-        <img src="image-aleternatica.jpg">
+    <canvas id="c1" width="500"  height="300">
+        
     </canvas>
     <script>
       var c1 = document.getElementById("c1");
-      if(c1.getContext){
-        alert("Navegador com suporte ativo");
-      }else{
-        alert("Navegador sem suporte ao Canvas");
-      }
+      var context =c1.getContext("2d");
+      //delimitador da máscara
+      context.rect(0, 0, 150, 150);
+      context.fillStyle='blue';
+      context.stroke();
+      context.clip();
+      //retangulo de preenchimento
+      context.fillRect(0,0,150,150);
+      //círculo mascarado
+      context.beginPath();
+      context.fillStyle='orange';
+      context.arc(130, 130, 60, 0, Math.PI * 2, true);
+      context.fill();
+
+            
     </script>
     
   </div>

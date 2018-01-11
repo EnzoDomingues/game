@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Game JS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <script src="js/game.js"></script>
+  <style>
+    canvas#c1{
+      border: 6px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <canvas id="c1" width="500"  height="300">
+        
+    </canvas>
+    <script>
+      var c1 = document.getElementById("c1");
+      var context =c1.getContext("2d");
+      //retangulo com posicao original
+      context.fillStyle='orange';
+      context.fillRect(0,0,120,120);
+      context.translate(50, 50);
+      //retangulo com posicao alterada devido a tranlação
+      context.fillStyle='#99ccff';
+      context.fillRect(0,0,120,120);
+      context.save();
+      //circulo original
+      context.beginPath();
+      context.arc(100, 100, 40, 0, Math.PI*2, true);
+      context.fillStyle='green';
+      context.fill();
+      //circulo alterado em escala
+      context.scale(0.5, 0.5);
+      context.beginPath();
+      context.arc(50, 50, 40, 0, Math.PI*2, true);
+      context.fillStyle='gray';
+      context.fill();
+      //retangulo com o angulo alterado devido a rotação
+      context.rotate(45);
+      context.fillStyle='blue';
+      context.restore();
+      context.translate(0, 0);
+      context.fillRect(0,0,120,120);
+      
+      
+      
+      
+            
+    </script>
+    
+  </div>
+</body>
+</html>

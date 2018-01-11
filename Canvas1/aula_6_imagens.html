@@ -15,16 +15,23 @@
 </head>
 <body>
   <div>
-    <canvas id="c1" width="600"  height="500">
-        <img src="image-aleternatica.jpg">
+    <canvas id="c1" width="500"  height="300">
+        
     </canvas>
     <script>
       var c1 = document.getElementById("c1");
-      if(c1.getContext){
-        alert("Navegador com suporte ativo");
-      }else{
-        alert("Navegador sem suporte ao Canvas");
+      var context =c1.getContext("2d");
+      var img= new Image();
+      var img2 = new Image();
+
+      img.onload = function(){
+        context.drawImage(img, 0, 0, 211, 283);
+        context.drawImage(img2, 216, 0, 200, 283);
+        
       }
+
+      img.src="impacta-01.jpg";
+      img2.src="impacta-02.jpg";
     </script>
     
   </div>

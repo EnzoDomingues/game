@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Game JS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <script src="js/game.js"></script>
+  <style>
+    canvas#c1{
+      border: 6px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <canvas id="c1" width="600"  height="500">
+        
+    </canvas>
+    <script>
+      var c1 = document.getElementById("c1");
+      var ctx =c1.getContext("2d");
+      ctx.beginPath();
+      ctx.lineWidth="20";
+      ctx.strokeStyle="blue"
+      ctx.moveTo(99, 150);
+      ctx.lineTo(149,50);
+      ctx.lineTo(199,150);
+      ctx.lineJoin='miter | bevel | round';
+      
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.lineWidth="20";
+      ctx.strokeStyle="blue"
+      ctx.moveTo(239, 150);
+      ctx.lineTo(289, 50);
+      ctx.lineTo(339, 150);
+      ctx.lineJoin='round'
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.lineWidth="20";
+      ctx.strokeStyle="blue"
+      ctx.moveTo(379, 150);
+      ctx.lineTo(429, 50);
+      ctx.lineTo(479, 150);
+      ctx.lineJoin='bevel';
+      ctx.stroke();
+      
+      
+      
+      
+      
+      
+    </script>
+    
+  </div>
+</body>
+</html>

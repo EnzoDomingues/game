@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Game JS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <script src="js/game.js"></script>
+  <style>
+    canvas#c1{
+      border: 6px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <canvas id="c1" width="600"  height="500">
+        
+    </canvas>
+    <script>
+      var c1 = document.getElementById("c1");
+      var ctx =c1.getContext("2d");
+
+      function circ (objData){
+        ctx.beginPath();
+        
+        ctx.fillStyle = objData.fillStyle;
+        if(objData.strokeStyle) ctx.strokeStyle = objData.strokeStyle;
+        ctx.lineWidth="2";
+        ctx.arc(objData.x, objData.y, objData.radius, 0,Math.PI*2,true);
+        ctx.fill();
+        ctx.stroke();
+      }
+      
+      circ({
+        fillStyle: 'blue',
+        x: 100,
+        y: 150,
+        radius: 40
+      });
+      
+      circ({
+        fillStyle: 'orange',
+        x: 170,
+        y: 150,
+        radius: 50
+      })
+      circ({
+        fillStyle: 'red',
+        x: 240,
+        y: 150,
+        radius: 60
+      })
+      circ({
+        fillStyle: 'white',
+        x: 260,
+        y: 132,
+        radius: 10
+      })
+      circ({
+        fillStyle: 'white',
+        x: 260,
+        y: 170,
+        radius: 10
+      })
+      circ({
+        fillStyle: 'black',
+        x: 260,
+        y: 132,
+        radius: 3
+      })
+      circ({
+        fillStyle: 'black',
+        x: 260,
+        y: 170,
+        radius: 3
+      })
+      
+      
+      
+      
+    </script>
+    
+  </div>
+</body>
+</html>

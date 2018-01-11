@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Game JS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <style>
+    canvas#c1{
+      border: 6px solid #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <canvas id="c1" width="600"  height="400">
+        
+    </canvas>
+    <script>
+      var c1 = document.getElementById("c1");
+      var context =c1.getContext("2d");
+      var posX = 10;
+      var posY = 10;
+      var largura = 50;
+      var altura = 50;
+
+      function anima(){
+        context.clearRect(0, 0, 600, 400);
+        context.fillStyle='#99ccff';
+        context.fillRect(posX,posY,largura,altura);
+        posX += 1;
+        posY += 2;
+        if(posX >= c1.Width-largura || posY >= c1.height-altura){
+          clearInterval(a);
+          function anima2(){
+            context.clearRect(0, 0, 600, 400);
+            context.fillStyle='#99ccff';
+            context.fillRect(posX,posY,largura,altura);
+            posX -= -2;
+            posY -= 1;
+            if(posX >= 550){ 
+              clearInterval(b)
+              function anima3(){
+                context.clearRect(0, 0, 600, 400);
+                context.fillStyle='#99ccff';
+                context.fillRect(posX,posY,largura,altura);
+                posX += -2;
+                posY += -1;
+                if(posY == 0){
+                  clearInterval(c);
+                  function anima4(){
+                    context.clearRect(0, 0, 600, 400);
+                    context.fillStyle='#99ccff';
+                    context.fillRect(posX,posY,largura,altura);
+                    posX += -2;
+                    posY += 1;
+                    if(posX >= 0){
+                      clearInterval(d);
+                      return   a = setInterval(anima, 5); 
+                    }
+                  }
+                  var d = setInterval(anima4, 5);
+                }
+              }
+              var c = setInterval(anima3, 5);
+            }
+          }
+          var b = setInterval(anima2, 5);
+        }
+      }
+      var a = setInterval(anima, 5); 
+    </script>
+    
+  </div>
+</body>
+</html>

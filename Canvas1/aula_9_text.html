@@ -15,16 +15,30 @@
 </head>
 <body>
   <div>
-    <canvas id="c1" width="600"  height="500">
-        <img src="image-aleternatica.jpg">
+    <canvas id="c1" width="500"  height="300">
+        
     </canvas>
     <script>
       var c1 = document.getElementById("c1");
-      if(c1.getContext){
-        alert("Navegador com suporte ativo");
-      }else{
-        alert("Navegador sem suporte ao Canvas");
-      }
+      var context =c1.getContext("2d");
+      context.fillStyle='#333399';
+      context.font='35px Verdana';
+      context.textAlign='center';
+      context.shadowOffsetX=2;
+      context.shadowOffsetY=2;
+      context.shadowBlur=2
+      context.shadowColor='rgba(0,0,0,0.5)';
+      ;
+      
+      
+      
+      context.fillText("IMPACTA TECNOLOGIA", c1.width/2, 40);
+      //context.strokeText("IMPACTA TECNOLOGIA", 10, 40);
+      
+      
+      
+      
+      
     </script>
     
   </div>
