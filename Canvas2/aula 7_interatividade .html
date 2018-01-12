@@ -21,20 +21,23 @@
     <canvas id="c1" width="600"  height="400">
         
     </canvas>
-    <video width="400" controls loop autoplay>
-        <source src="video/video.mp4" type="video/mp4"/>
-    </video>
-
     <script>
       var c1 = document.getElementById("c1");
       var context =c1.getContext("2d");
-      var i;
+      c1.addEventListener("mousemove", mouseMove);
 
-      var video = document.getElementsByTagName("video")[0];
-      video.addEventListener("play", function(){
-        i = setInterval(function(){
-         context.drawImage(video, 5, 5, 500, 300)},20)
-      })
+      function mouseMove(){
+        var posX = Math.random()*c1.width;
+        var posY = Math.random()*c1.height;
+        context.beginPath();
+        context.fillStyle='red';
+        context.arc(posX, posY, 5, 0, Math.PI * 2, true);
+        context.fill();
+        posX += 15;
+        posY += 15;
+      }
+      
+      
     </script>
     
   </div>
